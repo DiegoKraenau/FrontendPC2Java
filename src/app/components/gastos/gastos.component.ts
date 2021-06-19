@@ -12,7 +12,9 @@ export class GastosComponent implements OnInit {
   total: number = 0;
   gastos: Gasto[] = [];
 
-  constructor(private gastosService: GastosService, private router: Router) {}
+  constructor(private gastosService: GastosService, private router: Router) {
+    this.total = 0;
+  }
 
   btnClick = () => {
     this.router.navigateByUrl('/agregar');
@@ -22,6 +24,9 @@ export class GastosComponent implements OnInit {
     this.gastosService.getGastos().subscribe(
       (data) => {
         this.gastos = data;
+        this.gastos.forEach((gasto) => {
+          this.total = this.total + gasto.amount;
+        });
       },
       (error) => {
         console.log(error);

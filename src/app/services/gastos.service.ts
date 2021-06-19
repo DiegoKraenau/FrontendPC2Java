@@ -16,4 +16,12 @@ export class GastosService {
   postGasto(gasto: Gasto) {
     return this.http.post(this.url, gasto);
   }
+
+  getGasto(id: any) {
+    return this.http.get<Gasto>(`${this.url + '/' + id}`);
+  }
+
+  putGasto(gasto: Gasto) {
+    return this.http.put(this.url, gasto);
+  }
 }

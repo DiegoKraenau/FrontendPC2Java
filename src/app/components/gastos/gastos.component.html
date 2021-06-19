@@ -2,7 +2,7 @@
   <div class="column no-gutters">
     <div class="d-flex justify-content-between">
       <div class="column">
-        <h2>S./{{ total }}</h2>
+        <h2>S./ {{ total }}</h2>
         <p>El total de los pagos registrados para este periodo.</p>
       </div>
       <div>
@@ -14,9 +14,17 @@
     <div class="row">
       <div class="gastos-container">
         <mat-card *ngFor="let gasto of gastos">
+          <div class="close-container">
+            <button class="close" mat-button (click)="onNoClick()">X</button>
+          </div>
           <mat-card-title>S./ {{ gasto.amount }}</mat-card-title>
           <mat-card-content>
-            <a class="enlace" routerLink="/heroes"> {{ gasto.detail }}</a>
+            <a
+              class="enlace"
+              [routerLink]="['/gasto', gasto.outcomeId, 'update']"
+            >
+              {{ gasto.detail }}</a
+            >
           </mat-card-content>
           <mat-card-subtitle>{{
             gasto.createdAt | date: "dd/MM/yyyy"

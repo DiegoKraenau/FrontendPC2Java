@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="agregar">
+    <form [formGroup]="form" (ngSubmit)="update()">
+      <h1>Registrar un nuevo gasto</h1>
+      <p>Desde aquí podrá registrar un nuevo gasto</p>
+      <mat-form-field appearance="fill" class="ancho">
+        <mat-label>Monto</mat-label>
+        <input
+          matInput
+          autocomplete="off"
+          type="number"
+          formControlName="amount"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="ancho">
+        <mat-label>Detalle</mat-label>
+        <input
+          matInput
+          autocomplete="off"
+          type="text"
+          formControlName="detail"
+        />
+      </mat-form-field>
+      <div>
+        <button
+          type="submit"
+          class="btn btn-primary boton"
+          [disabled]="form.invalid"
+        >
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-primary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

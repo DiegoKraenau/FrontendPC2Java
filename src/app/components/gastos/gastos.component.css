@@ -1,6 +1,7 @@
 .mat-card {
   width: 30%;
   margin: 10px;
+  position: relative;
 }
 
 .gastos-container {
@@ -12,4 +13,20 @@
 
 .enlace {
   text-decoration: none;
+}
+
+.close-button {
+  float: right;
+  top: -24px;
+  right: -24px;
+}
+
+.close-container {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.close {
+  position: absolute !important;
+  right: 10px !important;
 }
