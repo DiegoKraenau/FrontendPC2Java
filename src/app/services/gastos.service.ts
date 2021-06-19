@@ -12,4 +12,8 @@ export class GastosService {
   getGastos() {
     return this.http.get<Gasto[]>(this.url);
   }
+
+  postGasto(gasto: Gasto) {
+    return this.http.post(this.url, gasto);
+  }
 }

@@ -6,7 +6,7 @@
         <p>El total de los pagos registrados para este periodo.</p>
       </div>
       <div>
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" (click)="btnClick()">
           Registrar un nuevo gasto
         </button>
       </div>
@@ -15,7 +15,9 @@
       <div class="gastos-container">
         <mat-card *ngFor="let gasto of gastos">
           <mat-card-title>S./ {{ gasto.amount }}</mat-card-title>
-          <mat-card-content>{{ gasto.detail }}</mat-card-content>
+          <mat-card-content>
+            <a class="enlace" routerLink="/heroes"> {{ gasto.detail }}</a>
+          </mat-card-content>
           <mat-card-subtitle>{{
             gasto.createdAt | date: "dd/MM/yyyy"
           }}</mat-card-subtitle>

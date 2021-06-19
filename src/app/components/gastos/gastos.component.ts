@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Gasto } from '../../models/Gasto';
 import { GastosService } from '../../services/gastos.service';
 
@@ -11,7 +12,11 @@ export class GastosComponent implements OnInit {
   total: number = 0;
   gastos: Gasto[] = [];
 
-  constructor(private gastosService: GastosService) {}
+  constructor(private gastosService: GastosService, private router: Router) {}
+
+  btnClick = () => {
+    this.router.navigateByUrl('/agregar');
+  };
 
   ngOnInit(): void {
     this.gastosService.getGastos().subscribe(
