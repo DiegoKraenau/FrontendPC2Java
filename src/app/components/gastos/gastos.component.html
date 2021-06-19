@@ -15,7 +15,9 @@
       <div class="gastos-container">
         <mat-card *ngFor="let gasto of gastos">
           <div class="close-container">
-            <button class="close" mat-button (click)="onNoClick()">X</button>
+            <button class="close" mat-button (click)="delete(gasto.outcomeId)">
+              X
+            </button>
           </div>
           <mat-card-title>S./ {{ gasto.amount }}</mat-card-title>
           <mat-card-content>

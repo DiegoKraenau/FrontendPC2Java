@@ -24,4 +24,8 @@ export class GastosService {
   putGasto(gasto: Gasto) {
     return this.http.put(this.url, gasto);
   }
+
+  deleteGasto(id: any) {
+    return this.http.delete(`${this.url + '/' + id}`);
+  }
 }
