@@ -1,0 +1,11 @@
+.mat-card {
+  width: 30%;
+  margin: 10px;
+}
+
+.gastos-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

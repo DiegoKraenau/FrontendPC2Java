@@ -1,1 +1,26 @@
-<p>gastos works!</p>
+<div class="container">
+  <div class="column no-gutters">
+    <div class="d-flex justify-content-between">
+      <div class="column">
+        <h2>S./{{ total }}</h2>
+        <p>El total de los pagos registrados para este periodo.</p>
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary">
+          Registrar un nuevo gasto
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="gastos-container">
+        <mat-card *ngFor="let gasto of gastos">
+          <mat-card-title>S./ {{ gasto.amount }}</mat-card-title>
+          <mat-card-content>{{ gasto.detail }}</mat-card-content>
+          <mat-card-subtitle>{{
+            gasto.createdAt | date: "dd/MM/yyyy"
+          }}</mat-card-subtitle>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
